@@ -28,7 +28,8 @@
         android:layout_marginHorizontal="10dp"
         android:background="@drawable/background_shape"
         android:backgroundTint="@color/blue"
-        android:text="@string/pick_a_date" />
+        android:hint="@string/pick_a_date"
+        android:textColorHint="@color/white"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/pickATimeBtn"
@@ -39,7 +40,8 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/background_shape"
         android:backgroundTint="@color/black"
-        android:text="@string/pick_a_time" />
+        android:hint="@string/pick_a_time"
+        android:textColorHint="@color/white"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submitTodo"
