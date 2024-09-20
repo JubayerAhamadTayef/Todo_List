@@ -18,6 +18,8 @@ import java.text.SimpleDateFormat
 class AddTodoFragment : Fragment() {
 
     private lateinit var binding: FragmentAddTodoBinding
+
+    private val calendar by lazy { Calendar.getInstance() }
     private lateinit var showDate: String
     private lateinit var showTime: String
 
@@ -75,7 +77,6 @@ class AddTodoFragment : Fragment() {
     }
 
     private fun pickADate() {
-        val calendar = Calendar.getInstance()
 
         val day = calendar.get(Calendar.DAY_OF_MONTH)
         val month = calendar.get(Calendar.MONTH)
@@ -97,26 +98,31 @@ class AddTodoFragment : Fragment() {
 
     }
 
-    @SuppressLint("SimpleDateFormat")
+    @SuppressLint("DefaultLocale", "SimpleDateFormat")
     private fun pickATime() {
-        val calendar = Calendar.getInstance()
 
-        val minute = calendar.get(Calendar.MINUTE)
         val hour = calendar.get(Calendar.HOUR_OF_DAY)
+        val minute = calendar.get(Calendar.MINUTE)
 
         val showTimePicker = TimePickerDialog(
             requireActivity(),
-            TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
-                val formatTime = SimpleDateFormat("hh:mm aa")
+            TimePickerDialog.OnTimeSetListener { timePicker, hourOfDay, minutes ->
 
-                showTime = formatTime.format(calendar.time)
 
-                binding.pickATimeBtn.text = showTime
+                calendar.set(Calendar.HOUR_OF_DAY, hourOfDay)
+                calendar.set(Calendar.MINUTE, minutes)
 
+                val timeFormatAmPm = SimpleDateFormat("hh:mm aa")
+                val timeFormat24Hours = SimpleDateFormat("HH:mm")
+
+                binding.pickATimeBtn.setText(
+                    when(timePicker.is24HourView){
+                        true -> timeFormat24Hours.format(calendar.time)
+                        false -> timeFormatAmPm.format(calendar.time)
+                    }
+                )
             },
-            hour,
-            minute,
-            false
+            hour, minute, false
         )
 
         showTimePicker.show()
