@@ -9,5 +9,18 @@
         android:id="@+id/homeFragment"
         android:name="com.example.todo_list.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_addTodoFragment"
+            app:destination="@id/addTodoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addTodoFragment"
+        android:name="com.example.todo_list.AddTodoFragment"
+        android:label="fragment_add_todo"
+        tools:layout="@layout/fragment_add_todo" >
+        <action
+            android:id="@+id/action_addTodoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

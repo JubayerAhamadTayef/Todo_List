@@ -2,4 +2,12 @@
     <string name="app_name">Todo_List</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add">Add Todo</string>
+    <string name="todo_title">Todo Title</string>
+    <string name="todo_date">Todo Date</string>
+    <string name="todo_time">Todo Time</string>
+    <string name="enter_your_todo_here">Enter Your Todo Here</string>
+    <string name="pick_a_date">Pick A Date</string>
+    <string name="pick_a_time">Pick A Time</string>
+    <string name="save_todo">Save Todo</string>
 </resources>

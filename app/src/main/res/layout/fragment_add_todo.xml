@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".AddTodoFragment">
+
+    <EditText
+        android:id="@+id/todoEditText"
+        style="@style/textStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/background_shape"
+        android:drawableStart="@drawable/baseline_edit_document_24"
+        android:hint="@string/enter_your_todo_here"
+        android:inputType="text"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/gray" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/pickADateBtn"
+        style="@style/textStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/background_shape"
+        android:backgroundTint="@color/blue"
+        android:text="@string/pick_a_date" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/pickATimeBtn"
+        style="@style/textStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_shape"
+        android:backgroundTint="@color/black"
+        android:text="@string/pick_a_time" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/submitTodo"
+        style="@style/textStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/background_shape"
+        android:text="@string/save_todo"
+        android:textColor="@color/black" />
+
+</LinearLayout>
