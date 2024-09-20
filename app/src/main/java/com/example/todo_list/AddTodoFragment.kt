@@ -115,12 +115,13 @@ class AddTodoFragment : Fragment() {
                 val timeFormatAmPm = SimpleDateFormat("hh:mm aa")
                 val timeFormat24Hours = SimpleDateFormat("HH:mm")
 
-                binding.pickATimeBtn.setText(
-                    when(timePicker.is24HourView){
+                showTime = when(timePicker.is24HourView){
                         true -> timeFormat24Hours.format(calendar.time)
                         false -> timeFormatAmPm.format(calendar.time)
                     }
-                )
+
+                binding.pickATimeBtn.setText(showTime)
+
             },
             hour, minute, false
         )
